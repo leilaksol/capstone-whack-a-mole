@@ -44,7 +44,7 @@ function setDelay(difficulty) {
   if (difficulty === "easy") {
     return 1500;
   }
-  
+
   else if (difficulty === "normal") {
     return 1000;
   }
@@ -75,7 +75,13 @@ function setDelay(difficulty) {
  */
 function chooseHole(holes) {
   // TODO: Write your code here.
-
+  const index = randomInteger(0, 8);
+	const hole = holes[index];
+	if (hole === lastHole) {
+		return chooseHole(holes);
+	}
+	lastHole = hole;
+	return hole;
 }
 
 /**
