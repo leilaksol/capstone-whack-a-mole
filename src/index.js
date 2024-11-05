@@ -6,14 +6,17 @@ const score= document.querySelector("#score"); // Use querySelector() to get the
 const timerDisplay= document.querySelector("#timer"); // use querySelector() to get the timer element.
 
 
-
+// Get buttons from HTML
+const easyButton = document.querySelector('#easy');
+const normalButton = document.querySelector('#normal');
+const hardButton = document.querySelector('#hard');
 
 
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+//let difficulty = "hard";
 
 /**
  * Generates a random integer within a range.
@@ -43,6 +46,19 @@ function randomInteger(min, max) {
  * setDelay("hard") //> returns 856 (returns a random number between 600 and 1200).
  *
  */
+
+// Function to set difficulty
+function setDifficulty(level) {
+  difficulty = level;
+}
+
+// Event listeners for buttons
+easyButton.addEventListener('click', () => setDifficulty('easy'));
+normalButton.addEventListener('click', () => setDifficulty('normal'));
+hardButton.addEventListener('click', () => setDifficulty('hard'));
+
+
+
 function setDelay(difficulty) {
   // TODO: Write your code here.
   if (difficulty === "easy") {
