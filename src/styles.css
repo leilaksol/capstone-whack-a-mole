@@ -59,8 +59,10 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  cursor: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mallet.png'), pointer;
+  /*cursor: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mallet.png'), pointer; */
   /*cursor: url('./assets/mallet.png'), pointer; */
+  cursor: url('https://raw.githubusercontent.com/Thinkful-Ed/js-dev-final-capstone-starter/main/assets/mallet.png'), pointer;
+
   
 }
 
