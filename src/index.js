@@ -12,11 +12,34 @@ const normalButton = document.querySelector('#normal');
 const hardButton = document.querySelector('#hard');
 
 
+const audioHit = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/hit.mp3?raw=true");
+const song = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/molesong.mp3?raw=true");
+
+
+
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
 //let difficulty = "hard";
+
+
+function playAudio(audioObject) {
+  audioObject.play();
+}
+
+function loopAudio(audioObject) {
+  audioObject.loop = true;
+  playAudio(audioObject);
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play(){
+  playAudio(song);
+}
 
 /**
  * Generates a random integer within a range.
@@ -161,6 +184,14 @@ function showUp() {
 * the timeoutID
 *
 */
+
+function toggleVisibility(hole) {
+  // This will add the 'show' class if it's not there, or remove it if it is
+  hole.classList.toggle('show');
+  
+  return hole;
+}
+
 function showAndHide(hole, delay){
   toggleVisibility(hole);
   // TODO: call the toggleVisibility function so that it adds the 'show' class.
@@ -182,11 +213,7 @@ function showAndHide(hole, delay){
 * a given hole. It returns the hole.
 *
 */
-function toggleVisibility(hole){
-  // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
-  hole.classList.toggle("show");
-  return hole;
-}
+
 
 /**
 *
@@ -257,6 +284,8 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
+  console.log("whack!") ; 
+  playAudio(audioHit); // Play hit sound on mole click
   updateScore();
   return points;
 }
@@ -312,6 +341,10 @@ function startGame(){
 }
 
 startButton.addEventListener("click", startGame);
+
+
+
+
 
 
 // Please do not modify the code below.
