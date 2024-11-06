@@ -157,7 +157,7 @@ function gameOver() {
     return timeoutID ; 
   } else {
     gameStopped = stopGame() ; 
-    return gamesStopped ; 
+    return gameStopped ; 
   } 
   
 }
