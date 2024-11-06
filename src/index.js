@@ -21,7 +21,7 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-//let difficulty = "hard";
+let difficulty = "easy"; // Default difficulty
 
 
 function playAudio(audioObject) {
@@ -73,6 +73,7 @@ function randomInteger(min, max) {
 // Function to set difficulty
 function setDifficulty(level) {
   difficulty = level;
+  console.log(`Difficulty set to: ${difficulty}`);
 }
 
 // Event listeners for buttons
@@ -171,6 +172,7 @@ function gameOver() {
 *
 */
 function showUp() {
+  console.log("Current difficulty:", difficulty); // Debugging line
   let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
