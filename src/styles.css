@@ -17,7 +17,7 @@
 
 body::before {
   content: "";
-  background: url('../assets/background3.png') no-repeat center center fixed;
+  background: url('../assets/background.png') no-repeat center center fixed;
   background-size: cover;
   filter: blur(5px);
   position: absolute;
